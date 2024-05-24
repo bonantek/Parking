@@ -35,7 +35,44 @@ namespace Parking.Data
                 .HasOne(r => r.Car)
                 .WithMany(c => c.Reservations)
                 .HasForeignKey(r => r.CarId);
+            
+            modelBuilder.Entity<Models.Parking>().HasData(
+                new Models.Parking
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Parking A",
+                    City = "Warszawa",
+                    Street = "Lazienkowska",
+                    StreetNr = "1",
+                    Capacity = 100,
+                    Logo = "",
+                    Description = "Big parking near Legia"
+                },
+                new Models.Parking
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Parking B",
+                    City = "Krakow",
+                    Street = "Reymonta",
+                    StreetNr = "2",
+                    Capacity = 150,
+                    Logo = "",
+                    Description = "Parking dla kibicow Cracovii"
+                },
+                new Models.Parking
+                {
+                    Id = Guid.NewGuid(),
+                    Name = "Parking Wiselka",
+                    City = "Krakow",
+                    Street = "Reymonta",
+                    StreetNr = "3",
+                    Capacity = 200,
+                    Logo = "",
+                    Description = "Parking Wiselki"
+                });
         }
+        
+        
 
         
         
