@@ -13,5 +13,7 @@ namespace Parking.Models
         public int Capacity { get; set; }
         public string Logo { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+        
+        public ICollection<ParkingSlot> ParkingSlots { get; set; }
     }
 }
