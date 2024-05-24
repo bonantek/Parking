@@ -1,0 +1,10 @@
+@model IEnumerable<Parking>
+
+@{
+    ViewData["Title"] = "Parkings";
+}
+
+@foreach (var parking in Model)
+{
+    <h3> @parking.Name </h3>
+}
