@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parking.Data;
 
@@ -10,9 +11,11 @@ using Parking.Data;
 namespace Parking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240525164252_Add_Identity")]
+    partial class Add_Identity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
@@ -92,11 +95,9 @@ namespace Parking.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProviderDisplayName")
@@ -134,11 +135,9 @@ namespace Parking.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Value")
@@ -286,7 +285,7 @@ namespace Parking.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("9d7d3148-1170-42d9-8c00-fa1a8c2f3405"),
+                            Id = new Guid("9f84db22-17fb-4674-b4d4-c2fd2c238b63"),
                             Capacity = 100,
                             City = "Warszawa",
                             Description = "Big parking near Legia",
@@ -297,7 +296,7 @@ namespace Parking.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a414e0cc-482d-4791-9038-6ae6d2689fa1"),
+                            Id = new Guid("19f68dd9-1c40-4ed7-ad75-907cbe439e6d"),
                             Capacity = 150,
                             City = "Krakow",
                             Description = "Parking dla kibicow Cracovii",
@@ -308,7 +307,7 @@ namespace Parking.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dd02e24b-3c33-4c0d-824e-e183b75a85ed"),
+                            Id = new Guid("8610eedc-aba0-4627-aac4-0fbcb88e7565"),
                             Capacity = 200,
                             City = "Krakow",
                             Description = "Parking Wiselki",

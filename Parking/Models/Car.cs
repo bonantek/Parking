@@ -6,9 +6,9 @@ namespace Parking.Models
         public string RegistrationNumber { get; set; } = String.Empty;
         public string Model { get; set; } = String.Empty;
         public string Make { get; set; } = String.Empty;
-        //public string UserId { get; set; }
-        ////public ApplicationUser User { get; set; }
-        
         public ICollection<Reservation> Reservations { get; set; }
+        
+        public string UserId { get; set; }
+        public ApplicationUser User { get; set; }
     }
 }

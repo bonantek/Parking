@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Parking.Models;
 
 namespace Parking.Data
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext: IdentityDbContext<ApplicationUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -35,6 +36,17 @@ namespace Parking.Data
                 .HasOne(r => r.Car)
                 .WithMany(c => c.Reservations)
                 .HasForeignKey(r => r.CarId);
+            
+            modelBuilder.Entity<Reservation>()
+                .HasOne(r => r.User)
+                .WithMany(u => u.Reservations)
+                .HasForeignKey(r => r.UserId);
+
+            modelBuilder.Entity<Car>()
+                .HasOne(c => c.User)
+                .WithMany(u => u.Cars)
+                .HasForeignKey(c => c.UserId);
+
             
             modelBuilder.Entity<Models.Parking>().HasData(
                 new Models.Parking

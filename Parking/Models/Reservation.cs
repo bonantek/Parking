@@ -8,10 +8,11 @@ namespace Parking.Models
         public DateTime ReservationDate { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        //public string UserId { get; set; } chyba userID ma string w tym frmeworku
-        //public ApplicationUser User { get; set; }
         public Guid CarId { get; set; }
         public Car Car { get; set; }
         public bool IsActive { get; set; }
+        
+        public string UserId { get; set; } 
+        public ApplicationUser User { get; set; }
     }
 }
