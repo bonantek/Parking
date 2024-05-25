@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Parking.Data;
@@ -49,7 +50,6 @@ app.UseAuthorization();
 
 app.MapIdentityApi<ApplicationUser>();
 
-app.MapGet("/dupa", () => "dupa").RequireAuthorization();
 app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
