@@ -1,3 +1,4 @@
+using System.Formats.Asn1;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -18,15 +19,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
-    {
-        options.SignIn.RequireConfirmedAccount = true;
-    })
-    .AddEntityFrameworkStores<AppDbContext>();
-
-builder.Services.AddIdentityCore<ApplicationUser>()
-    .AddEntityFrameworkStores<AppDbContext>()
+        options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
     .AddDefaultUI()
-    .AddApiEndpoints();
+    .AddApiEndpoints()
+    .AddEntityFrameworkStores<AppDbContext>();
     
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();
@@ -54,5 +51,36 @@ app.MapRazorPages();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles = new[] { "Admin", "Worker" };
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    string adminEmail = "admin@admin.com";
+    string password = "Test1234!";
+    if (await userManager.FindByEmailAsync(adminEmail) == null)
+    {
+        var user = new ApplicationUser();
+        user.UserName = adminEmail;
+        user.Email = adminEmail;
+
+        await userManager.CreateAsync(user, password);
+        await userManager.AddToRoleAsync(user, "Admin");
+    }
+}
 
 app.Run();
