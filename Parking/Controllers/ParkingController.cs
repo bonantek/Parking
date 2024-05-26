@@ -1,20 +1,21 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Parking.Data;
+using Parking.Data.Services;
 
 namespace Parking.Controllers
 {
     public class ParkingController : Controller
     {
-        private readonly AppDbContext _context;
-        public ParkingController(AppDbContext appDbContext)
+        private readonly IParkingService _service;
+        public ParkingController(IParkingService service)
         {
-            _context = appDbContext;
+            _service = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var parkings = _context.Parkings.ToList();
+            var parkings = await _service.GetAllAsync();
             return View(parkings);
         }
 
@@ -25,9 +26,9 @@ namespace Parking.Controllers
         }
         
         [Authorize(Roles = "Admin")]
-        public IActionResult Manage()
+        public async Task<IActionResult> Manage()
         {
-            var parkings = _context.Parkings.ToList();
+            var parkings = await _service.GetAllAsync();
             return View(parkings);
         }
     }
