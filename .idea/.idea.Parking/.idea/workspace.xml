@@ -10,7 +10,12 @@
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Parking/Manage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Parking/Manage.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/Services/ParkingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/Services/ParkingService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Models/Parking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Models/Parking.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Models/ParkingSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Models/ParkingSlot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,26 +48,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Parking: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "services",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Parking: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;services&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/Users/antoniprochownik/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
-      "/Users/antoniprochownik/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
-      "/Users/antoniprochownik/Library/Application Support/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/antoniprochownik/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/antoniprochownik/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/antoniprochownik/Library/Application Support/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Parking: http">
     <configuration name="Parking: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Parking/Parking.csproj" />
@@ -107,6 +112,8 @@
       <workItem from="1700600296616" duration="364000" />
       <workItem from="1716731554019" duration="1122000" />
       <workItem from="1716732690634" duration="2613000" />
+      <workItem from="1716755297635" duration="105000" />
+      <workItem from="1716756295785" duration="2355000" />
     </task>
     <servers />
   </component>

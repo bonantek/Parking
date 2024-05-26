@@ -7,15 +7,15 @@ namespace Parking.Controllers
 {
     public class ParkingController : Controller
     {
-        private readonly IParkingService _service;
+        private readonly IParkingService _parkingService;
         public ParkingController(IParkingService service)
         {
-            _service = service;
+            _parkingService = service;
         }
 
         public async Task<IActionResult> Index()
         {
-            var parkings = await _service.GetAllAsync();
+            var parkings = await _parkingService.GetAllAsync();
             return View(parkings);
         }
 
@@ -31,7 +31,7 @@ namespace Parking.Controllers
         {
             if (ModelState.IsValid)
             {
-                await _service.AddAsync(parking);
+                await _parkingService.AddAsync(parking);
                 return RedirectToAction("Manage");
             }
             return View(parking);
@@ -40,7 +40,7 @@ namespace Parking.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Manage()
         {
-            var parkings = await _service.GetAllAsync();
+            var parkings = await _parkingService.GetAllAsync();
             return View(parkings);
         }
         
@@ -48,7 +48,7 @@ namespace Parking.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            await _service.DeleteAsync(id);
+            await _parkingService.DeleteAsync(id);
             return RedirectToAction("Manage");
         }
     }

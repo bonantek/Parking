@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Parking.Models;
 
 namespace Parking.Data.Services
 {
@@ -27,6 +28,15 @@ namespace Parking.Data.Services
         public async Task AddAsync(Models.Parking parking)
         {
             await _context.Parkings.AddAsync(parking);
+            await _context.SaveChangesAsync();
+
+            for (int i = 1; i <= parking.Capacity; i++)
+            {
+                var parkingSlot = new ParkingSlot { ParkingId = parking.Id, Parking = parking, SlotNr = i };
+                parking.ParkingSlots.Add(parkingSlot);
+                await _context.ParkingSlots.AddAsync(parkingSlot);
+            }
+
             await _context.SaveChangesAsync();
         }
 
