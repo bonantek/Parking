@@ -25,6 +25,18 @@ namespace Parking.Controllers
             return View();
         }
         
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Create(Models.Parking parking)
+        {
+            if (ModelState.IsValid)
+            {
+                await _service.AddAsync(parking);
+                return RedirectToAction("Manage");
+            }
+            return View(parking);
+        }
+        
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Manage()
         {

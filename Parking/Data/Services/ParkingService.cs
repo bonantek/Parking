@@ -23,9 +23,10 @@ namespace Parking.Data.Services
             throw new NotImplementedException();
         }
 
-        public Task AddAsync(Models.Parking parking)
+        public async Task AddAsync(Models.Parking parking)
         {
-            throw new NotImplementedException();
+            await _context.Parkings.AddAsync(parking);
+            await _context.SaveChangesAsync();
         }
 
         public void Delete(Guid id)

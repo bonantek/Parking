@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace Parking.Models
 {
@@ -14,6 +15,7 @@ namespace Parking.Models
         public string Logo { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         
+        [ValidateNever]
         public ICollection<ParkingSlot> ParkingSlots { get; set; }
     }
 }
