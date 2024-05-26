@@ -9,10 +9,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Parking/Views/Parking/Create.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/Views/Parking/Manage.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/wwwroot/css/Parking.styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Parking/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Parking/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +55,7 @@
   "keyToString": {
     ".NET Launch Settings Profile.Parking: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feat/handle-user-roles",
+    "git-widget-placeholder": "feat/create-parking-view",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,37 +123,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Parking/Controllers/ParkingController.cs</url>
-          <line>15</line>
-          <properties documentPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" containingFunctionPresentation="Method 'Index'">
-            <startOffsets>
-              <option value="364" />
-            </startOffsets>
-            <endOffsets>
-              <option value="406" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Parking/Controllers/ParkingController.cs</url>
-          <line>16</line>
-          <properties documentPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" containingFunctionPresentation="Method 'Index'">
-            <startOffsets>
-              <option value="419" />
-            </startOffsets>
-            <endOffsets>
-              <option value="441" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
