@@ -10,7 +10,7 @@
     @if (User.IsInRole("Admin"))
     {
         <li class="nav-item">
-            <a id="ManageParkings" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="ManageParkings">(admin) Manage Parkings</a>
+            <a id="ManageParkings" class="nav-link text-dark" asp-controller="Parking" asp-action="Manage" title="ManageParkings">(admin) Manage Parkings</a>
         </li>
     }
     <li class="nav-item">

@@ -4,7 +4,16 @@
     ViewData["Title"] = "Parkings";
 }
 
+<div id="ParkingFlexContainer">
 @foreach (var parking in Model)
 {
-    <h3> @parking.Name </h3>
+    <div class="parking-flex-item">
+        <h2>@parking.Name</h2>
+        City: @parking.City <br/>
+        Street: @parking.Street <br/>
+        Street Number: @parking.StreetNr <br/>
+        Capacity: @parking.Capacity <br/>
+        Description: @parking.Description <br/>
+    </div>
 }
+</div>
