@@ -43,5 +43,13 @@ namespace Parking.Controllers
             var parkings = await _service.GetAllAsync();
             return View(parkings);
         }
+        
+        
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _service.DeleteAsync(id);
+            return RedirectToAction("Manage");
+        }
     }
 }

@@ -15,6 +15,7 @@
             Street Number: @parking.StreetNr <br/>
             Capacity: @parking.Capacity <br/>
             Description: @parking.Description <br/>
+            <a asp-controller="Parking" asp-action="Delete" asp-route-id="@parking.Id">Delete</a>
         </div>
     }
 

@@ -18,9 +18,10 @@ namespace Parking.Data.Services
             return parkings;
         }
 
-        public Task<Models.Parking> GetByIdAsync()
+        public async Task<Models.Parking> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var parking = await _context.Parkings.FindAsync(id);
+            return parking;
         }
 
         public async Task AddAsync(Models.Parking parking)
@@ -29,9 +30,14 @@ namespace Parking.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        public void Delete(Guid id)
+        public async Task DeleteAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var parkingToDeleted = await _context.Parkings.FindAsync(id);
+            if (parkingToDeleted != null)
+            {
+                _context.Parkings.Remove(parkingToDeleted);
+                await _context.SaveChangesAsync();
+            }
         }
 
         public Models.Parking Update(Guid id, Models.Parking parking)
