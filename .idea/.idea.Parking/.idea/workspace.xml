@@ -10,12 +10,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/Services/IParkingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/Services/IParkingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/Services/ParkingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/Services/ParkingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-shm" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-wal" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Views/Parking/Manage.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Parking/Manage.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +45,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Parking: http.executor": "Debug",
+    ".NET Launch Settings Profile.Parking: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "services",
     "node.js.detected.package.eslint": "true",
@@ -123,24 +117,5 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Parking/Controllers/ParkingController.cs</url>
-          <line>51</line>
-          <properties documentPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" containingFunctionPresentation="Method 'Delete'">
-            <startOffsets>
-              <option value="1416" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1439" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
