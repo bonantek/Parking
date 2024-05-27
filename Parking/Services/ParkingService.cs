@@ -30,11 +30,10 @@ namespace Parking.Data.Services
             await _context.Parkings.AddAsync(parking);
             await _context.SaveChangesAsync();
 
+
             for (int i = 1; i <= parking.Capacity; i++)
             {
-                var parkingSlot = new ParkingSlot { ParkingId = parking.Id, Parking = parking, SlotNr = i };
-                parking.ParkingSlots.Add(parkingSlot);
-                await _context.ParkingSlots.AddAsync(parkingSlot);
+                await _context.AddAsync(new ParkingSlot { SlotNr = i, ParkingId = parking.Id });
             }
 
             await _context.SaveChangesAsync();
@@ -50,7 +49,7 @@ namespace Parking.Data.Services
             }
         }
 
-        public Models.Parking Update(Guid id, Models.Parking parking)
+        public async Task<Models.Parking> Update(Guid id, Models.Parking parking)
         {
             throw new NotImplementedException();
         }
