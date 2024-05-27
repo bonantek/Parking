@@ -5,8 +5,7 @@ namespace Parking.Models
         public Guid Id { get; set; } = Guid.NewGuid();
         public Guid ParkingId { get; set; }
         public Parking Parking { get; set; }
-        public string SlotNr { get; set; } = string.Empty;
-        
+        public int SlotNr { get; set; }
         public ICollection<Reservation> Reservations { get; set; }
     }
 

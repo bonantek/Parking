@@ -1,20 +1,21 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Parking.Data;
+using Parking.Data.Services;
 
 namespace Parking.Controllers
 {
     public class ParkingController : Controller
     {
-        private readonly AppDbContext _context;
-        public ParkingController(AppDbContext appDbContext)
+        private readonly IParkingService _parkingService;
+        public ParkingController(IParkingService service)
         {
-            _context = appDbContext;
+            _parkingService = service;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var parkings = _context.Parkings.ToList();
+            var parkings = await _parkingService.GetAllAsync();
             return View(parkings);
         }
 
@@ -24,11 +25,31 @@ namespace Parking.Controllers
             return View();
         }
         
+        [HttpPost]
         [Authorize(Roles = "Admin")]
-        public IActionResult Manage()
+        public async Task<IActionResult> Create(Models.Parking parking)
         {
-            var parkings = _context.Parkings.ToList();
+            if (ModelState.IsValid)
+            {
+                await _parkingService.AddAsync(parking);
+                return RedirectToAction("Manage");
+            }
+            return View(parking);
+        }
+        
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Manage()
+        {
+            var parkings = await _parkingService.GetAllAsync();
             return View(parkings);
+        }
+        
+        
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _parkingService.DeleteAsync(id);
+            return RedirectToAction("Manage");
         }
     }
 }

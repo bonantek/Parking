@@ -9,15 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Parking/Views/Parking/Create.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parking/Views/Parking/Manage.cshtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parking/wwwroot/css/Parking.styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/dataSources/ec9af238-b6ca-4755-ba10-9347068fa3d6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/dataSources/ec9af238-b6ca-4755-ba10-9347068fa3d6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Parking/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Parking/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/wwwroot/css/site.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-wal" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dd71da798df8459dbad50ec9c8082c3fc2d000/46/f219d443/Monitor.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e3c72be86aa347539fcb54ceaee13c0b16600/85/01bd8224/FileSystemWatcher.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/antoniprochownik/Desktop/studia/agh4/pz2/laby/project/Parking/Parking/Views/Parking/Create.cshtml" root0="FORCE_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -51,26 +46,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Parking: http.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feat/create-parking-view",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Parking: http.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;services&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "rider.external.source.directories": [
-      "/home/mateus/.config/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
-      "/home/mateus/.config/JetBrains/Rider2024.1/resharper-host/SourcesCache",
-      "/home/mateus/.local/share/Symbols/src"
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;/Users/antoniprochownik/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
+      &quot;/Users/antoniprochownik/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
+      &quot;/Users/antoniprochownik/Library/Application Support/Symbols/src&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Parking: http">
     <configuration name="Parking: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Parking/Parking.csproj" />
@@ -113,6 +108,11 @@
       <updated>1716654810508</updated>
       <workItem from="1716654811553" duration="1871000" />
       <workItem from="1700600296616" duration="364000" />
+      <workItem from="1716731554019" duration="1122000" />
+      <workItem from="1716732690634" duration="2613000" />
+      <workItem from="1716755297635" duration="105000" />
+      <workItem from="1716756295785" duration="3045000" />
+      <workItem from="1716809189896" duration="2330000" />
     </task>
     <servers />
   </component>

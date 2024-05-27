@@ -1,1 +1,41 @@
-[WIP] - Create Parking Form
+@model Parking
+
+<form asp-controller="Parking" asp-action="Create" method="post">
+    <div>
+        <label asp-for="Name">Name:</label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    
+    <div>
+        <label asp-for="City">City:</label>
+        <input asp-for="City"/>
+        <span asp-validation-for="City"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Street">Street:</label>
+        <input asp-for="Street"/>
+        <span asp-validation-for="Street"></span>
+    </div>
+    
+    <div>
+        <label asp-for="StreetNr">Number:</label>
+        <input asp-for="StreetNr"/>
+        <span asp-validation-for="StreetNr"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Capacity">Capacity:</label>
+        <input asp-for="Capacity"/>
+        <span asp-validation-for="Capacity"></span>
+    </div>
+    
+    <div>
+        <label asp-for="Description">Description:</label>
+        <textarea asp-for="Description"></textarea>
+        <span asp-validation-for="Description" ></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>

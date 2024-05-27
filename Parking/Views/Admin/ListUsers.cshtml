@@ -1,0 +1,38 @@
+@using Microsoft.AspNetCore.Identity
+@model IEnumerable<IdentityUser>
+
+<h3>List of all users</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            Action
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @item.UserName
+            </td>
+            <td>
+                @item.Email
+            </td>
+            <td>
+                <a class="btn btn-danger">Delete</a>
+                <a class="btn btn-secondary">Role</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
