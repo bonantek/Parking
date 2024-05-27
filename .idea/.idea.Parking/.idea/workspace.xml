@@ -9,13 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/dataSources/ec9af238-b6ca-4755-ba10-9347068fa3d6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/dataSources/ec9af238-b6ca-4755-ba10-9347068fa3d6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/ParkingController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/Services/ParkingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/Services/ParkingService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Models/Parking.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Models/Parking.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Models/ParkingSlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Models/ParkingSlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-wal" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +111,8 @@
       <workItem from="1716731554019" duration="1122000" />
       <workItem from="1716732690634" duration="2613000" />
       <workItem from="1716755297635" duration="105000" />
-      <workItem from="1716756295785" duration="2355000" />
+      <workItem from="1716756295785" duration="3045000" />
+      <workItem from="1716809189896" duration="2330000" />
     </task>
     <servers />
   </component>
