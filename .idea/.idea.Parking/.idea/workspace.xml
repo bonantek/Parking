@@ -9,14 +9,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/Services/CarService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/Services/ICarService.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/Views/Car/Create.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-shm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-wal" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Models/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Models/Car.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feat/update-parking-functionality" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -52,9 +56,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Parking: http.executor": "Run",
+    ".NET Launch Settings Profile.Parking: http.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "services",
+    "git-widget-placeholder": "feat/car-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -141,6 +145,25 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Parking/Controllers/CarController.cs</url>
+          <line>38</line>
+          <properties documentPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" containingFunctionPresentation="Method 'Create'">
+            <startOffsets>
+              <option value="1163" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1186" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
