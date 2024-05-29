@@ -19,4 +19,20 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-image: url("/img/background.jpg");
+  background-size: 300px;
+  min-height: 1vh;
+}
+.container {
+  background-color: rgba(255, 255, 255, 0.96);
+  padding: 20px;
+  border-radius: 10px;
+}
+#Footer {
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 10px;
+  z-index: 100;
 }

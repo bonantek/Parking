@@ -16,12 +16,6 @@ namespace Parking.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> Index()
-        {
-            var parkings = await _parkingService.GetAllAsync();
-            return View(parkings);
-        }
-
         [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
