@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Parking.Data;
 
@@ -10,9 +11,11 @@ using Parking.Data;
 namespace Parking.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240529190030_xd")]
+    partial class xd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.5");
@@ -286,7 +289,7 @@ namespace Parking.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ad41d70f-d5d7-4264-845f-f2edf20135d6"),
+                            Id = new Guid("f16ad715-2395-47a9-acfb-78f57eaea81b"),
                             Capacity = 100,
                             City = "Warszawa",
                             Description = "Big parking near Legia",
@@ -297,7 +300,7 @@ namespace Parking.Migrations
                         },
                         new
                         {
-                            Id = new Guid("148ce653-f75b-453e-9b34-73bce815922d"),
+                            Id = new Guid("7fe82bb8-b76c-4280-8ea1-4354f9a5ee55"),
                             Capacity = 150,
                             City = "Krakow",
                             Description = "Parking dla kibicow Cracovii",
@@ -308,7 +311,7 @@ namespace Parking.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b076b27e-9d43-4823-aeb9-2736d434798d"),
+                            Id = new Guid("03f501ec-867f-4df0-bab3-4cc346e942be"),
                             Capacity = 200,
                             City = "Krakow",
                             Description = "Parking Wiselki",
