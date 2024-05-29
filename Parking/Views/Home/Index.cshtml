@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "";
+    ViewData["Title"] = "Parkings - reserve a slot";
 }
 
 @model IEnumerable<Parking>
@@ -9,13 +9,13 @@
 <div id="ParkingFlexContainer">
     @foreach (var parking in Model)
     {
-    <div class="parking-flex-item">
-        <h2>@parking.Name</h2>
-        City: @parking.City <br/>
-        Street: @parking.Street <br/>
-        Street Number: @parking.StreetNr <br/>
-        Capacity: @parking.Capacity <br/>
-        Description: @parking.Description <br/>
-    </div>
+        <a asp-controller="Reservation" class="parking-flex-item" asp-action="Create" asp-route-id="@parking.Id">
+            <h2>@parking.Name</h2>
+            City: @parking.City <br/>
+            Street: @parking.Street <br/>
+            Street Number: @parking.StreetNr <br/>
+            Capacity: @parking.Capacity <br/>
+            Description: @parking.Description <br/>
+        </a>
     }
 </div>

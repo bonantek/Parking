@@ -4,8 +4,11 @@
     flex-wrap: wrap;
 }
 #RightSection {
-    max-width: 1000px;
+    max-width: 900px;
     min-width: 300px;
+}
+#LeftSection, #RightSection {
+    padding: 10px;
 }
 #SlotsSection {
     display: flex;
