@@ -15,6 +15,7 @@ builder.Services.AddSwaggerGen();
 
 // Adding Services:
 builder.Services.AddScoped<IParkingService, ParkingService>();
+builder.Services.AddScoped<ICarService, CarService>();
 
 builder.Services.AddAuthentication().AddBearerToken(IdentityConstants.BearerScheme);
 builder.Services.AddAuthorizationBuilder();
