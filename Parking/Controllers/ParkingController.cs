@@ -50,9 +50,9 @@ namespace Parking.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Update(System.Guid id)
         {
-            var parking = _context.Parkings.Find(id);
+            var parking = await _context.Parkings.FindAsync(id);
             
-            _context.Entry(parking).Collection(p => p.ParkingSlots).Load();
+            await _context.Entry(parking).Collection(p => p.ParkingSlots).LoadAsync();
             
             return View(parking);
         }
