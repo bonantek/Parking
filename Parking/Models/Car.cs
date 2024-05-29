@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace Parking.Models
 {
     public class Car
@@ -6,6 +8,8 @@ namespace Parking.Models
         public string RegistrationNumber { get; set; } = String.Empty;
         public string Model { get; set; } = String.Empty;
         public string Make { get; set; } = String.Empty;
+       
+        [ValidateNever]
         public ICollection<Reservation> Reservations { get; set; }
         
         public string UserId { get; set; }
