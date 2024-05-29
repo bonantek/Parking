@@ -1,0 +1,59 @@
+@model Parking
+
+<h1 id="Title">Update Parking:</h1>
+
+<div id="UpdateContainer">
+    <div id="LeftSection">
+        <h3>Parking Data</h3>
+
+        <form asp-controller="Parking" asp-action="Update" method="post">
+            <div>
+                <label asp-for="Name">Name:</label><br>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+            <div>
+                <label asp-for="City">City:</label><br>
+                <input asp-for="City"/>
+                <span asp-validation-for="City"></span>
+            </div>
+
+            <div>
+                <label asp-for="Street">Street:</label><br>
+                <input asp-for="Street"/>
+                <span asp-validation-for="Street"></span>
+            </div>
+
+            <div>
+                <label asp-for="StreetNr">Number:</label><br>
+                <input asp-for="StreetNr"/>
+                <span asp-validation-for="StreetNr"></span>
+            </div>
+
+            <div>
+                <label asp-for="Description">Description:</label><br>
+                <textarea asp-for="Description"></textarea>
+                <span asp-validation-for="Description" ></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+            <a class="btn btn-danger" asp-controller="Parking" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+
+        </form>
+    </div>
+    
+    <div id="RightSection">
+        
+        <h3>Parking Slots:</h3>
+        
+        <div id="SlotsSection">
+        @foreach (var slot in Model.ParkingSlots.OrderBy(s => s.SlotNr))
+        {
+            <div class="parking-slot">@slot.SlotNr</div>
+        }
+        </div>
+    </div>
+</div>
+
+

@@ -4,23 +4,21 @@
     ViewData["Title"] = "Manage Pargings";
 }
 
-<h1>Manage Parkings</h1>
+<h1 id="Title">Manage Parkings</h1>
 <div id="ParkingFlexContainer">
     @foreach (var parking in Model)
     {
-        <div class="parking-flex-item">
+        <a asp-controller="Parking" class="parking-flex-item" asp-action="Update" asp-route-id="@parking.Id">
             <h2>@parking.Name</h2>
             City: @parking.City <br/>
             Street: @parking.Street <br/>
             Street Number: @parking.StreetNr <br/>
             Capacity: @parking.Capacity <br/>
             Description: @parking.Description <br/>
-            <a class="btn btn-secondary" asp-controller="Parking" asp-route-id="@parking.Id">Update</a>
-            <a class="btn btn-danger" asp-controller="Parking" asp-action="Delete" asp-route-id="@parking.Id">Delete</a>
-        </div>
+        </a>
     }
 
-    <div class="parking-flex-item">
-        <a id="AddParking" asp-controller="Parking" asp-action="Create">+</a>
-    </div>
+    <a id="AddParking" class="parking-flex-item-add" asp-controller="Parking" asp-action="Create">
+        +
+    </a>
 </div>

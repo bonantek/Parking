@@ -1,23 +1,39 @@
 #ParkingFlexContainer {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
+    gap: 20px 30px;
 }
-#AddParking {
+.parking-flex-item-add {
     display: block;
     color: white;
     text-decoration: none;
-    width: 100%;
-    height: 100%;
     font-size: 200px;
     text-align: center;
     line-height: 80%;
     background-color: #80ff80;
+    align-self: flex-start;
 }
 
-.parking-flex-item {
+.parking-flex-item, .parking-flex-item-add {
     width: 300px;
+    min-height: 230px;
     padding: 20px;
+    align-self: stretch;
+}
+a {
+    color: inherit;
+    text-decoration: none;
 }
 .parking-flex-item:hover {
     background-color: #eeeeeeee;
+    color: #0a58ca;
+}
+.parking-flex-item-add:hover {
+    background-color: rgba(59, 255, 52, 0.93);
+    color: white;
+}
+
+#Title {
+    margin-bottom: 50px;
 }
