@@ -28,20 +28,76 @@ namespace Parking.Controllers
         {
             return View();
         }
-
+        
         [HttpPost]
         public async Task<IActionResult> Create([Bind("RegistrationNumber", "Make", "Model")] Car car)
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
-            car.User = user;
-            car.UserId = user.Id;
-            
-            await _carService.AddAsync(car);
-            TempData["SuccessMessage"] = "Successfully added new car.";
-            return RedirectToAction("Index");
-            
-            TempData["ErrorMessage"] = "Error while adding a new car.";
+            if (user != null)
+            {
+                car.User = user;
+                car.UserId = user.Id;
+                
+                ModelState.Clear();
+                
+                if (TryValidateModel(car))
+                {
+                    try
+                    {
+                        await _carService.AddAsync(car);
+                        TempData["SuccessMessage"] = "Successfully added new car.";
+                        return RedirectToAction("Index");
+                    }
+                    catch (Exception ex)
+                    {
+                        TempData["ErrorMessage"] = $"Error while adding a new car: {ex.Message}";
+                    }
+                }
+                else
+                {
+                    TempData["ErrorMessage"] = "Model state is not valid. Please check your inputs.";
+                    return View(car);
+                }
+            }
+            else
+            {
+                return NotFound();
+            }
+
             return View(car);
         }
+        // [HttpPost]
+        // public async Task<IActionResult> Create([Bind("RegistrationNumber", "Make", "Model")] Car car)
+        // {
+        //     var user = await _userManager.GetUserAsync(HttpContext.User);
+        //     if (user != null)
+        //     {
+        //         car.User = user;
+        //         car.UserId = user.Id;
+        //     }
+        //     else
+        //     {
+        //         return NotFound();
+        //     }
+        //     
+        //     ModelState.ClearValidationState("UserId");
+        //     ModelState.ClearValidationState("User");
+        //    
+        //     if (TryValidateModel(car))
+        //     {
+        //         try
+        //         {
+        //             await _carService.AddAsync(car);
+        //             TempData["SuccessMessage"] = "Successfully added new car.";
+        //             return RedirectToAction("Index");
+        //         }
+        //         catch (Exception ex)
+        //         {
+        //             TempData["ErrorMessage"] = "Error while adding a new car";
+        //         }
+        //     }
+        //     TempData["ErrorMessage"] = "Error while adding a new car.";
+        //     return View(car);
+        // }
     }
 }

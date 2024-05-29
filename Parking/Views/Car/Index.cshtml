@@ -1,5 +1,11 @@
 @model IEnumerable<Car>
 
+@if (TempData["SuccessMessage"] != null)
+{
+<div class="alert alert-success text-center">
+    @TempData["SuccessMessage"]
+</div>
+}
 <h3>List of Cars</h3>
 
 <a class="btn btn-primary" asp-controller="Car" asp-action="Create" >Add Car</a>
