@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
+using Parking.Data.Services;
 using Parking.Models;
 
 namespace Parking.Controllers;
@@ -8,20 +9,18 @@ namespace Parking.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IParkingService _parkingService;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IParkingService parkingService)
     {
         _logger = logger;
+        _parkingService = parkingService;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
+        var parkings = await _parkingService.GetAllAsync();
+        return View(parkings);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

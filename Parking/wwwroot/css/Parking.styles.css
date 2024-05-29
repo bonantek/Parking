@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     align-items: stretch;
     gap: 20px 30px;
+    justify-content: space-evenly;
 }
 .parking-flex-item-add {
     display: block;
