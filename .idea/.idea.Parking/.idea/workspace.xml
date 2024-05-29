@@ -9,10 +9,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Controllers/AdminController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/AdminController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Admin/ListUsers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Admin/ListUsers.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-shm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-wal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_Layout.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Shared/_LoginPartial.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +35,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Users/antoniprochownik/Desktop/studia/agh4/pz2/laby/project/Parking/Parking/Controllers/AdminController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Users/antoniprochownik/Desktop/studia/agh4/pz2/laby/project/Parking/Parking/Controllers/ParkingController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -51,10 +56,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "services",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -120,7 +128,22 @@
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
