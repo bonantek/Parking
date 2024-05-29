@@ -32,16 +32,14 @@ namespace Parking.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([Bind("RegistrationNumber", "Make", "Model")] Car car)
         {
-            var user = await _userManager.GetUserAsync(User);
+            var user = await _userManager.GetUserAsync(HttpContext.User);
             car.User = user;
             car.UserId = user.Id;
             
-            if (ModelState.IsValid)
-            {
-                await _carService.AddAsync(car);
-                TempData["SuccessMessage"] = "Successfully added new car.";
-                return RedirectToAction("Index");
-            }
+            await _carService.AddAsync(car);
+            TempData["SuccessMessage"] = "Successfully added new car.";
+            return RedirectToAction("Index");
+            
             TempData["ErrorMessage"] = "Error while adding a new car.";
             return View(car);
         }
