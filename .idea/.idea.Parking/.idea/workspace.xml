@@ -9,11 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Parking/Views/Car/Update.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Services/CarService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Services/CarService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Admin/ListUsers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Admin/ListUsers.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +117,7 @@
       <workItem from="1716809189896" duration="2330000" />
       <workItem from="1717018109102" duration="1620000" />
       <workItem from="1717060080459" duration="6540000" />
-      <workItem from="1717071037589" duration="1438000" />
+      <workItem from="1717071037589" duration="2115000" />
     </task>
     <servers />
   </component>
@@ -141,25 +139,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Parking/Controllers/CarController.cs</url>
-          <line>117</line>
-          <properties documentPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" containingFunctionPresentation="Method 'UpdatePost'">
-            <startOffsets>
-              <option value="3519" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3543" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

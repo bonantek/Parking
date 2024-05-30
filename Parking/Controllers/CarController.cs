@@ -33,6 +33,18 @@ namespace Parking.Controllers
             var cars = await _carService.GetAllByUserAsync(user.Id);
             return View(cars);
         }
+        
+        public async Task<IActionResult> IndexList(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var cars = await _carService.GetAllByUserAsync(user.Id);
+            return View("Index", cars);
+        }
 
         [HttpGet]
         public IActionResult Create()
