@@ -19,7 +19,12 @@ namespace Parking.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var cars = await _carService.GetAllAsync();
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            var cars = await _carService.GetAllByUserAsync(user.Id);
             return View(cars);
         }
 
@@ -66,38 +71,26 @@ namespace Parking.Controllers
 
             return View(car);
         }
-        // [HttpPost]
-        // public async Task<IActionResult> Create([Bind("RegistrationNumber", "Make", "Model")] Car car)
-        // {
-        //     var user = await _userManager.GetUserAsync(HttpContext.User);
-        //     if (user != null)
-        //     {
-        //         car.User = user;
-        //         car.UserId = user.Id;
-        //     }
-        //     else
-        //     {
-        //         return NotFound();
-        //     }
-        //     
-        //     ModelState.ClearValidationState("UserId");
-        //     ModelState.ClearValidationState("User");
-        //    
-        //     if (TryValidateModel(car))
-        //     {
-        //         try
-        //         {
-        //             await _carService.AddAsync(car);
-        //             TempData["SuccessMessage"] = "Successfully added new car.";
-        //             return RedirectToAction("Index");
-        //         }
-        //         catch (Exception ex)
-        //         {
-        //             TempData["ErrorMessage"] = "Error while adding a new car";
-        //         }
-        //     }
-        //     TempData["ErrorMessage"] = "Error while adding a new car.";
-        //     return View(car);
-        // }
+
+        [HttpPost]
+        public async Task<IActionResult> DeleteCar(Guid id)
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            if (user != null)
+            {
+                try
+                {
+                    await _carService.DeleteAsync(id);
+                    TempData["SuccessMessage"] = "Successfully deleted your car.";
+                    return RedirectToAction("Index");
+                }
+                catch (Exception ex)
+                {
+                    TempData["ErrorMessage"] = "Some error occured while deleteing your car";
+                }
+            }
+
+            return NotFound();
+        }
     }
 }

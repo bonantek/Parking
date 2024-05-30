@@ -9,12 +9,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db-shm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db-wal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Models/Car.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Models/Car.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Services/CarService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Services/CarService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Services/ICarService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Services/ICarService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Car/Index.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,9 +51,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    ".NET Launch Settings Profile.Parking: http.executor": "Debug",
+    ".NET Launch Settings Profile.Parking: http.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feat/car-service",
+    "git-widget-placeholder": "feat/car-management",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -119,6 +120,7 @@
       <workItem from="1716756295785" duration="3045000" />
       <workItem from="1716809189896" duration="2330000" />
       <workItem from="1717018109102" duration="1620000" />
+      <workItem from="1717060080459" duration="2722000" />
     </task>
     <servers />
   </component>
@@ -140,25 +142,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Parking/Controllers/CarController.cs</url>
-          <line>42</line>
-          <properties documentPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" containingFunctionPresentation="Method 'Create'">
-            <startOffsets>
-              <option value="1283" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1306" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

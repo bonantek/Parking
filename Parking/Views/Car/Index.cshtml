@@ -1,3 +1,5 @@
+@using System.Diagnostics
+@using Microsoft.AspNetCore.Server.Kestrel.Core
 @model IEnumerable<Car>
 
 @if (TempData["SuccessMessage"] != null)
@@ -6,6 +8,52 @@
     @TempData["SuccessMessage"]
 </div>
 }
-<h3>List of Cars</h3>
+@if (TempData["ErrorMessage"] != null)
+{
+<div class="alert alert-danger text-center">
+    @TempData["ErrorMessage"]
+</div>
+}
+<h3>My Cars</h3>
 
 <a class="btn btn-primary" asp-controller="Car" asp-action="Create" >Add Car</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Brand
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Registration No
+        </th>
+        <th>
+            Action
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var car in Model)
+    {
+        <tr>
+            <td>
+                @car.Make
+            </td>
+            <td>
+                @car.Model
+            </td>
+            <td>
+                @car.RegistrationNumber
+            </td>
+            <td>
+                <form asp-controller="Car" asp-action="DeleteCar" method="post" asp-route-id="@car.Id">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
