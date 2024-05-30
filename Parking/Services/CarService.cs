@@ -17,9 +17,10 @@ namespace Parking.Data.Services
             return cars;
         }
 
-        public Task<Car> GetByIdAsync(Guid id)
+        public async Task<Car> GetByIdAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var car = await _context.Cars.FindAsync(id);
+            return car;
         }
         
         public async Task AddAsync(Car car)

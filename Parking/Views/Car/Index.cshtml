@@ -52,6 +52,9 @@
                 <form asp-controller="Car" asp-action="DeleteCar" method="post" asp-route-id="@car.Id">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+                <form asp-controller="Car" asp-action="Update" method="get" asp-route-id="@car.Id">
+                    <button class="btn btn-secondary">Update</button>
+                </form>
             </td>
         </tr>
     }
