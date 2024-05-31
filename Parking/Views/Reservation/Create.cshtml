@@ -1,0 +1,92 @@
+@{
+    ViewData["Title"] = "Parkings - reserve a slot";
+    Parking parking = ViewData["Parking"] as Parking;
+    IEnumerable<ParkingSlot> parkingSlots = parking.ParkingSlots.OrderBy(s => s.SlotNr);
+    IEnumerable<Car> userCars = ViewData["UserCars"] as IEnumerable<Car>;
+}
+@model Reservation
+
+@if (TempData["ErrorMessage"] != null)
+{
+<div class="alert alert-danger text-center">
+    @TempData["ErrorMessage"]
+</div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+<div class="alert alert-success text-center">
+    @TempData["SuccessMessage"]
+</div>
+}
+
+<h1>Make a reservation</h1>
+
+
+<div id="UpdateContainer">
+
+    <div id="LeftSection">
+
+        <div class="alert alert-danger text-center" id="ErrorMessages">
+        </div>
+
+
+        <form asp-controller="Reservation" asp-action="Create" method="post">
+            <div>
+                <label asp-for="StartDate">Start Date:</label><br>
+                <input type="datetime-local" asp-for="StartDate" id="StartDateInput"/>
+                <span asp-validation-for="StartDate"></span>
+            </div>
+
+            <div>
+                <label asp-for="EndDate">End Date:</label><br>
+                <input type="datetime-local" asp-for="EndDate" id="EndDateInput"/>
+                <span asp-validation-for="EndDate"></span>
+            </div>
+
+            <button class="btn btn-primary btn-custom" id="CheckSlotsButton">Check Availability</button>
+            <script src="/js/updateParkingSlotsAvailability.js" defer></script>
+
+            <div>
+                <label asp-for="CarId">Car:</label><br>
+                <select asp-for="CarId" id="CarSelect">
+                    @foreach (var car in userCars)
+                    {
+                        <option value="@car.Id">@car.Make @car.Model - @car.RegistrationNumber</option>
+                    }
+                </select>
+            </div>
+
+            <input asp-for="ParkingSlotId" type="hidden" value="" id="ParkingSlotId">
+            
+            <button type="submit" id="CreateReservationButton" class="btn btn-primary btn-custom">Create</button>
+            <script src="/js/createReservationSubmit.js" defer></script>
+            
+        </form>
+        <br/><br/>
+        <h3>Chosen parking:</h3>
+        <h2>@parking.Name</h2>
+        City: @parking.City <br/>
+        Street: @parking.Street <br/>
+        Street Number: @parking.StreetNr <br/>
+        Capacity: @parking.Capacity <br/>
+        Description: @parking.Description <br/>
+    </div>
+
+    <div id="RightSection">
+        
+        <h2>Parking Slots:</h2>
+        <h5 id="ParkingSlotsTitle">Select Start Date and End Date to check availability:</h5>
+
+        <div id="SlotsSection">
+
+            @foreach (var slot in parkingSlots)
+            {
+                <div class="parking-slot inactive" id="@slot.Id" onclick="">@slot.SlotNr</div>
+            }
+        </div>
+    </div>
+    
+    <script src="/js/parkingSlotsGrid.js"></script>
+</div>
+
