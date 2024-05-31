@@ -46,11 +46,14 @@
     <div id="RightSection">
         
         <h3>Parking Slots:</h3>
+        <h4>Current parking slot availability. Click slot to view its reservations</h4>
         
         <div id="SlotsSection">
         @foreach (var slot in Model.ParkingSlots.OrderBy(s => s.SlotNr))
         {
-            <div class="parking-slot">@slot.SlotNr</div>
+            <a class="manage-parking-slot" asp-controller="Reservation" asp-action="ParkingSlotReservations" asp-route-id="@slot.Id">
+                <div class="parking-slot">@slot.SlotNr</div>
+            </a>
         }
         </div>
     </div>

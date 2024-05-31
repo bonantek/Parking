@@ -2,6 +2,7 @@ using System.Dynamic;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Parking.Data;
 using Parking.Data.Services;
 using Parking.Models;
@@ -84,7 +85,7 @@ namespace Parking.Controllers
         }
 
         [Authorize]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> UserReservations()
         {
             var user = await _userManager.GetUserAsync(HttpContext.User);
             if (user == null)
@@ -120,7 +121,42 @@ namespace Parking.Controllers
             }
 
 
-            return RedirectToAction("Index");
+            return RedirectToAction("UserReservations");
+        }
+        [Authorize(Roles = "Admin")]
+        public async Task<IActionResult> ParkingSlotReservations(Guid id)
+        {
+            var parkingSlot = await _context.ParkingSlots.FindAsync(id);
+            if (parkingSlot == null)
+            {
+                return Redirect("/Home/404");
+            }
+
+            var reservations = await _reservationService.GetAllForParkingSlot(parkingSlot);
+            return View(reservations);
+        }
+        [Authorize(Roles = "Admin"), HttpPost]
+        public async Task<IActionResult> DeactivateAdmin(Guid id)
+        {
+            var parkingSlotId = new Guid();
+            try
+            {
+                var reservation = await _context.Reservations
+                    .Include(r => r.ParkingSlot)
+                    .SingleAsync(r => r.Id == id);
+            
+                if (reservation == null) return Redirect("/Home/404");
+                reservation.IsActive = false;
+                parkingSlotId = reservation.ParkingSlot.Id;
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Successfully deactivated a reservation";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error while deactivating a reservation: {ex.Message}";
+            }
+            
+            return RedirectToAction("ParkingSlotReservations", new {id = parkingSlotId.ToString()});
         }
     }
 }

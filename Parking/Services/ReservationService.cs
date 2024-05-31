@@ -52,5 +52,15 @@ namespace Parking.Data.Services
                 .ThenInclude(ps => ps.Parking)
                 .ToListAsync();
         }
+        
+        public async Task<IEnumerable<Reservation>> GetAllForParkingSlot(ParkingSlot parkingSlot)
+        {
+            return await _context.Reservations.Where(r => r.ParkingSlotId == parkingSlot.Id)
+                .Include(r => r.User)
+                .Include(r => r.Car)
+                .Include(r => r.ParkingSlot)
+                .ThenInclude(ps => ps.Parking)
+                .ToListAsync();
+        }
     }
 }

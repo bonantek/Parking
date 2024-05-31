@@ -7,5 +7,6 @@ namespace Parking.Data.Services
     {
         Task<Reservation> CreateReservation(Reservation reservation);
         Task<IEnumerable<Reservation>> GetAllForUser(ApplicationUser user);
+        Task<IEnumerable<Reservation>> GetAllForParkingSlot(ParkingSlot parkingSlot);
     }
 }
