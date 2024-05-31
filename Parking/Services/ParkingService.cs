@@ -49,9 +49,12 @@ namespace Parking.Data.Services
             }
         }
 
-        public async Task<Models.Parking> Update(Guid id, Models.Parking parking)
+        public async Task<Models.Parking> GetByIdWithSlotsAndReservations(Guid id)
         {
-            throw new NotImplementedException();
+            return await _context.Parkings
+                .Include(p => p.ParkingSlots)
+                .ThenInclude(ps => ps.Reservations)
+                .SingleAsync(p => p.Id == id);
         }
     }
 
