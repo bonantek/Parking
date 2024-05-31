@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Your reservations";
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+<div class="alert alert-danger text-center">
+    @TempData["ErrorMessage"]
+</div>
+}
+
+@if (TempData["SuccessMessage"] != null)
+{
+<div class="alert alert-success text-center">
+    @TempData["SuccessMessage"]
+</div>
+}
+
+@model IEnumerable<Reservation>
+
+<h1 id="Title">Your Reservations:</h1>
+
+<div id="ParkingFlexContainer">
+    @foreach (var reservation in Model)
+    {
+        <div class="parking-flex-item">
+            <h2>Parking: </h2>
+            Name: @reservation.ParkingSlot.Parking.Name <br/>
+            City: @reservation.ParkingSlot.Parking.City <br/>
+            Street: @reservation.ParkingSlot.Parking.Street <br/>
+            Street Number: @reservation.ParkingSlot.Parking.StreetNr <br/>
+            <h2>Parking Slot:</h2>
+            Nr: @reservation.ParkingSlot.SlotNr<br/>
+            <h2>Car:</h2>
+            Make: @reservation.Car.Make<br/>
+            Model: @reservation.Car.Model<br/>
+            Registration number: @reservation.Car.RegistrationNumber<br/>
+            <h2>Reservation data:</h2>
+            Reservation created (UTC): @reservation.ReservationDate<br/>
+            Is active: @(reservation.IsActive ? "Yes" : "No") <br/>
+            Start date (UTC): @reservation.StartDate<br/>
+            End date (UTC): @reservation.EndDate<br/>
+            @if (reservation.IsActive)
+            {
+                <form asp-controller="Reservation" asp-action="Deactivate" method="post" asp-route-id="@reservation.Id">
+                    <button type="submit" class="btn btn-danger">Deactivate</button>
+                </form>
+            }
+        </div>
+    }
+</div>
