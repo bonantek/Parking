@@ -1,11 +1,14 @@
 const CheckSlotsButton = document.getElementById('CheckSlotsButton')
-const StartDateInput = document.getElementById('StartDateInput')
-const EndDateInput = document.getElementById('EndDateInput')
-const SlotsSection = document.getElementById('SlotsSection')
-const ParkingSlotsTitle = document.getElementById('ParkingSlotsTitle')
-const ErrorMessages = document.getElementById('ErrorMessages')
 
 CheckSlotsButton.addEventListener('click', async (e) => {
+
+    const StartDateInput = document.getElementById('StartDateInput')
+    const EndDateInput = document.getElementById('EndDateInput')
+    const SlotsSection = document.getElementById('SlotsSection')
+    const ParkingSlotsTitle = document.getElementById('ParkingSlotsTitle')
+    const ErrorMessages = document.getElementById('ErrorMessages')
+    const ParkingSlotIdInput = document.getElementById('ParkingSlotId');
+    
     e.preventDefault()
     ErrorMessages.style = "display: none;"
     
@@ -30,9 +33,12 @@ CheckSlotsButton.addEventListener('click', async (e) => {
             endDate: endDate
         })
     })
+
+    ParkingSlotIdInput.value = "";
     
     for (child of SlotsSection.children) {
         child.classList.remove('inactive')
+        child.classList.remove('selected')
         child.setAttribute('onclick', 'activateSlot(this)')
     }
     
