@@ -38,3 +38,14 @@ a {
 #Title {
     margin-bottom: 50px;
 }
+.selected {
+    background-color: #3279ff !important;
+}
+.inactive {
+    background-color: #ff0015 !important;
+}
+.inactive:hover {
+    background-color: #ff0015 !important;
+}
+
+

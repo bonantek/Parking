@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices.JavaScript;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -83,6 +84,25 @@ namespace Parking.Controllers
         {
             await _parkingService.DeleteAsync(id);
             return RedirectToAction("Manage");
+        }
+
+        public class ParkingSlotAvailabilityDto
+        {
+            public DateTime startDate { get; set; }
+            public DateTime endDate { get; set; }
+            
+        }
+
+        [HttpPost, Authorize]
+        public async Task<JsonResult> ParkingSlotsAvailability(Guid id, [FromBody] ParkingSlotAvailabilityDto test)
+        {
+            var parking = await _parkingService.GetByIdWithSlotsAndReservations(id);
+            var availability = new Dictionary<string, bool>();
+            foreach (var parkingSlot in parking.ParkingSlots)
+            {
+                availability.Add(parkingSlot.Id.ToString(), parkingSlot.IsAvailable(test.startDate.ToUniversalTime(), test.endDate.ToUniversalTime()));
+            }
+            return Json(availability);
         }
     }
 }

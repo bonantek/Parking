@@ -8,6 +8,6 @@ namespace Parking.Data.Services
         Task<Models.Parking> GetByIdAsync(Guid id);
         Task AddAsync(Models.Parking parking);
         Task DeleteAsync(Guid id);
-        Task<Models.Parking> Update(Guid id, Models.Parking parking);
+        Task<Models.Parking> GetByIdWithSlotsAndReservations(Guid id);
     }
 }
