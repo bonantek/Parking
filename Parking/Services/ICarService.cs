@@ -9,6 +9,8 @@ namespace Parking.Data.Services
         Task<Car> GetByIdAsync(Guid id);
         Task AddAsync(Car car);
         Task DeleteAsync(Guid id);
+        Task<IEnumerable<Car>> GetAllByUserAsync(string userId);
     }
+    
 
 }
