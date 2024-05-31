@@ -82,5 +82,45 @@ namespace Parking.Controllers
             }
             return View();
         }
+
+        [Authorize]
+        public async Task<IActionResult> Index()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var reservations = await _reservationService.GetAllForUser(user);
+            return View(reservations);
+        }
+        [Authorize, HttpPost]
+        public async Task<IActionResult> Deactivate(Guid id)
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            try
+            {
+                await _context.Entry(user).Collection(p => p.Reservations).LoadAsync();
+                var reservation = user.Reservations.Single(r => r.Id == id);
+            
+                if (reservation == null) return Redirect("/Home/404");
+                reservation.IsActive = false;
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Successfully deactivated a reservation";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error while deactivating a reservation: {ex.Message}";
+            }
+
+
+            return RedirectToAction("Index");
+        }
     }
 }

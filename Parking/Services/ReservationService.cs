@@ -1,3 +1,4 @@
+using System.Drawing.Imaging;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor;
 using Parking.Models;
@@ -41,6 +42,15 @@ namespace Parking.Data.Services
             await _context.Reservations.AddAsync(reservation);
             await _context.SaveChangesAsync();
             return reservation;
+        }
+
+        public async Task<IEnumerable<Reservation>> GetAllForUser(ApplicationUser user)
+        {
+            return await _context.Reservations.Where(r => r.UserId == user.Id)
+                .Include(r => r.Car)
+                .Include(r => r.ParkingSlot)
+                .ThenInclude(ps => ps.Parking)
+                .ToListAsync();
         }
     }
 }
