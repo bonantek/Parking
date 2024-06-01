@@ -1,7 +1,7 @@
 # Parking Reservation System
 
 **Parking** is a project built with ASP.NET Core MVC and ASP.NET Core Identity.
-Carried out 
+Project created for academic course "Advanced Programming 2"
 
 # Features
 
@@ -59,5 +59,10 @@ pass: Test1234!
 ```
 # Screenshots
 
-
-
+![Reservation](img/reservation.png)
+![Make Reservation](img/make_reservation.png)
+![List of Parking](img/list_parking.png)
+![Delete Confirmation](img/delete.png)
+![List of Cars](img/car_list.png)
+![List of Users](img/users.png)
+![Signing Up](img/signup.png)
