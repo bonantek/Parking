@@ -10,8 +10,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7ba6ff3-4d38-43e6-b9e3-6b2b0a813b53" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Parking/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Controllers/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Parking/Views/Admin/ListUsers.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Views/Admin/ListUsers.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Parking/Data/parking.db" beforeDir="false" afterPath="$PROJECT_DIR$/Parking/Data/parking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,7 @@
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.Parking: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feat/car-management&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -118,6 +117,8 @@
       <workItem from="1717018109102" duration="1620000" />
       <workItem from="1717060080459" duration="6540000" />
       <workItem from="1717071037589" duration="2115000" />
+      <workItem from="1717188587736" duration="3141000" />
+      <workItem from="1717233409880" duration="2055000" />
     </task>
     <servers />
   </component>
