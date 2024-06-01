@@ -1,12 +1,11 @@
 # Parking Reservation System
 
 **Parking** is a project built with ASP.NET Core MVC and ASP.NET Core Identity.
-
-System allows users to reserve parking spots for certain period. Enables users to manage their reservations, including canceling them. Each reservation is associated with a specific car, so users can also manage their vehicles. Admins have control over the entire system - they can delete users, add and edit parking slots, and manage all reservations.
+Carried out 
 
 # Features
 
-- authentication and authorization (ASP.NET Core Identity)
+- Authentication and authorization (ASP.NET Core Identity)
 - User Functionality 
   - Users can make reservations for parking area
   - Users can deactivate their reservations
@@ -37,7 +36,7 @@ git@github.com:bonantek/Parking.git
 ```
 dotnet restore
 ```
-3. Update database
+3. Update database:
 ```
 dotnet ef database update
 ```
@@ -59,5 +58,6 @@ email: admin@admin.com
 pass: Test1234!
 ```
 # Screenshots
+
 
 
