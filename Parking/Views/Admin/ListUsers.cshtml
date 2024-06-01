@@ -43,18 +43,19 @@
                 @item.Email
             </td>
             <td>
-                <form asp-controller="Admin" asp-action="DeleteUser" method="post" asp-route-id="@item.Id" id="DeleteUserForm">
-                    <button type="submit" class="btn btn-danger" id="DeleteUserButton">Delete</button>
-                    <script defer>
-                        const DeleteUserButton = document.getElementById('DeleteUserButton');
-                        DeleteUserButton.addEventListener('click', (e) => confirmDangerousActions(e, "DeleteUserForm",
-                            "Are you sure you want to delete this user?", "This action cannot be reversed. It will delete all reservations associated with this user."))
-                    </script>
-                </form>
-                <form asp-controller="Car" asp-action="IndexList" method="get" asp-route-id="@item.Id" >
-                    <button type="submit" class="btn btn btn-secondary">See Cars</button>
-                </form>
-
+                <div class="buttons-flex">
+                    <form asp-controller="Admin" asp-action="DeleteUser" method="post" asp-route-id="@item.Id" id="DeleteUserForm">
+                        <button type="submit" class="btn btn-danger" id="DeleteUserButton">Delete</button>
+                        <script defer>
+                            const DeleteUserButton = document.getElementById('DeleteUserButton');
+                            DeleteUserButton.addEventListener('click', (e) => confirmDangerousActions(e, "DeleteUserForm",
+                                "Are you sure you want to delete this user?", "This action cannot be reversed. It will delete all reservations associated with this user."))
+                        </script>
+                    </form>
+                    <form asp-controller="Car" asp-action="IndexList" method="get" asp-route-id="@item.Id">
+                        <button type="submit" class="btn btn btn-secondary">See Cars</button>
+                    </form>
+                </div>
             </td>
         </tr>
     }
