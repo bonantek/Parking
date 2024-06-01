@@ -44,11 +44,10 @@
             </td>
             <td>
                 <div class="buttons-flex">
-                    <form asp-controller="Admin" asp-action="DeleteUser" method="post" asp-route-id="@item.Id" id="DeleteUserForm">
-                        <button type="submit" class="btn btn-danger" id="DeleteUserButton">Delete</button>
+                    <form asp-controller="Admin" asp-action="DeleteUser" method="post" asp-route-id="@item.Id" id="DeleteUserForm_@item.Id">
+                        <button type="submit" class="btn btn-danger" id="DeleteUserButton_@item.Id">Delete</button>
                         <script defer>
-                            const DeleteUserButton = document.getElementById('DeleteUserButton');
-                            DeleteUserButton.addEventListener('click', (e) => confirmDangerousActions(e, "DeleteUserForm",
+                            document.getElementById('DeleteUserButton_@item.Id').addEventListener('click', (e) => confirmDangerousActions(e, "DeleteUserForm_@item.Id",
                                 "Are you sure you want to delete this user?", "This action cannot be reversed. It will delete all reservations associated with this user."))
                         </script>
                     </form>
