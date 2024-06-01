@@ -30,6 +30,18 @@ namespace Parking.Controllers
             _userManager = userManager;
         }
 
+        public async Task<IActionResult> IndexList(string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var reservations = await _reservationService.GetAllForUser(user);
+            return View("UserReservations", reservations);
+        }
+        
         [Authorize]
         public async Task<IActionResult> Create(System.Guid id)
         {

@@ -52,7 +52,10 @@
                         </script>
                     </form>
                     <form asp-controller="Car" asp-action="IndexList" method="get" asp-route-id="@item.Id">
-                        <button type="submit" class="btn btn btn-secondary">See Cars</button>
+                        <button type="submit" class="btn btn btn-outline-primary">See Cars</button>
+                    </form>
+                    <form asp-controller="Reservation" asp-action="IndexList" method="get" asp-route-id="@item.Id">
+                        <button type="submit" class="btn btn btn-outline-secondary">See Reservations</button>
                     </form>
                 </div>
             </td>
