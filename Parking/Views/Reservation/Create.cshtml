@@ -4,6 +4,7 @@
     IEnumerable<ParkingSlot> parkingSlots = parking.ParkingSlots.OrderBy(s => s.SlotNr);
     IEnumerable<Car> userCars = ViewData["UserCars"] as IEnumerable<Car>;
 }
+@using Microsoft.CodeAnalysis.CSharp.Syntax
 @model Reservation
 
 @if (TempData["ErrorMessage"] != null)
@@ -79,10 +80,25 @@
         <h5 id="ParkingSlotsTitle">Select Start Date and End Date to check availability:</h5>
 
         <div id="SlotsSection">
-
-            @foreach (var slot in parkingSlots)
+            @if (Model != null && Model.StartDate != null && Model.EndDate != null)
             {
-                <div class="parking-slot inactive" id="@slot.Id" onclick="">@slot.SlotNr</div>
+                @foreach (var slot in parkingSlots)
+                {
+                    @if (slot.IsAvailable(@Model.StartDate, @Model.EndDate))
+                    {
+                        <div class="parking-slot" id="@slot.Id" onclick="">@slot.SlotNr</div>
+                    } 
+                    else
+                    {
+                        <div class="parking-slot inactive" id="@slot.Id" onclick="">@slot.SlotNr</div>
+                    }
+                }
+            }
+            else {
+                @foreach (var slot in parkingSlots)
+                {
+                    <div class="parking-slot inactive" id="@slot.Id" onclick="">@slot.SlotNr</div>
+                }
             }
         </div>
     </div>
