@@ -79,7 +79,7 @@ namespace Parking.Controllers
             return RedirectToAction("Manage");
         }
         
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin"), HttpPost]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _parkingService.DeleteAsync(id);

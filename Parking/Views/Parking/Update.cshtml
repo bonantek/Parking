@@ -38,8 +38,15 @@
             </div>
 
             <button type="submit" class="btn btn-primary">Update</button>
-            <a class="btn btn-danger" asp-controller="Parking" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
 
+        </form>
+        <form asp-controller="Parking" asp-action="Delete" method="post" asp-route-id="@Model.Id" id="DeleteParkingForm">
+            <button type="submit" class="btn btn-danger" id="DeleteParkingButton">Delete</button>
+            <script defer>
+                const DeleteParkingButton = document.getElementById('DeleteParkingButton');
+                DeleteParkingButton.addEventListener('click', (e) => confirmDangerousActions(e, "DeleteParkingForm",
+                    "Are you sure you want to delete this parking?", "This action cannot be reversed. It will delete all reservations associated with this parking's parking slots"))
+            </script>
         </form>
     </div>
     

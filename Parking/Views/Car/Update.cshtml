@@ -22,5 +22,12 @@
     </div>
     
     <button type="submit" class="btn btn-primary">Update</button>
-    
+</form>
+<form asp-controller="Car" asp-action="DeleteCar" method="post" asp-route-id="@Model.Id" id="DeleteCarForm">
+    <button id="DeleteCarButton" type="submit" class="btn btn-danger">Delete car</button>
+    <script defer>
+        const DeleteCarButton = document.getElementById('DeleteCarButton');
+        DeleteCarButton.addEventListener('click', (e) => confirmDangerousActions(e, "DeleteCarForm",
+          "Are you sure you want to delete this car?", "This action cannot be reversed. Deleting your car will also delete all your reservations associated with that car."))
+    </script>
 </form>
