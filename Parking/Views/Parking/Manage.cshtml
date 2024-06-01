@@ -3,6 +3,18 @@
 @{
     ViewData["Title"] = "Manage Pargings";
 }
+@if (TempData["SuccessMessage"] != null)
+{
+<div class="alert alert-success text-center">
+    @TempData["SuccessMessage"]
+</div>
+}
+@if (TempData["ErrorMessage"] != null)
+{
+<div class="alert alert-danger text-center">
+    @TempData["ErrorMessage"]
+</div>
+}
 
 <h1 id="Title">Manage Parkings</h1>
 <div id="ParkingFlexContainer">

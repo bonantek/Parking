@@ -14,49 +14,19 @@
     @TempData["ErrorMessage"]
 </div>
 }
-<h3>My Cars</h3>
+<h1>My Cars</h1>
 
-<a class="btn btn-primary" asp-controller="Car" asp-action="Create" >Add Car</a>
-
-<table class="table">
-    <thead>
-    <tr>
-        <th>
-            Brand
-        </th>
-        <th>
-            Model
-        </th>
-        <th>
-            Registration No
-        </th>
-        <th>
-            Action
-        </th>
-    </tr>
-    </thead>
-    <tbody>
+<div id="ParkingFlexContainer">
     @foreach (var car in Model)
     {
-        <tr>
-            <td>
-                @car.Make
-            </td>
-            <td>
-                @car.Model
-            </td>
-            <td>
-                @car.RegistrationNumber
-            </td>
-            <td>
-                <form asp-controller="Car" asp-action="DeleteCar" method="post" asp-route-id="@car.Id">
-                    <button type="submit" class="btn btn-danger">Delete</button>
-                </form>
-                <form asp-controller="Car" asp-action="Update" method="get" asp-route-id="@car.Id">
-                    <button class="btn btn-secondary">Update</button>
-                </form>
-            </td>
-        </tr>
+        <a class="parking-flex-item" asp-controller="Car" asp-action="Update" asp-route-id="@car.Id">
+            <h3>Car data:</h3>
+            Make: @car.Make<br/>
+            Model: @car.Model<br/>
+            Registration number: @car.RegistrationNumber<br/>
+        </a>
     }
-    </tbody>
-</table>
+    <a id="AddParking" class="parking-flex-item-add" asp-controller="Car" asp-action="Create">
+        +
+    </a>
+</div>

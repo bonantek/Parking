@@ -30,8 +30,10 @@ namespace Parking.Controllers
             if (ModelState.IsValid)
             {
                 await _parkingService.AddAsync(parking);
+                TempData["SuccessMessage"] = "Successfully created the parking.";
                 return RedirectToAction("Manage");
             }
+            TempData["ErrorMessage"] = $"Couldn't create parking";
             return View(parking);
         }
         
@@ -67,22 +69,22 @@ namespace Parking.Controllers
                 try
                 {
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Successfully updated the parking.";
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    ModelState.AddModelError("", "Unable to save changes. " +
-                                                 "Try again, and if the problem persists, " +
-                                                 "see your system administrator.");
+                    TempData["ErrorMessage"] = $"Error while adding a new car: {ex.Message}";
                 }
             }
             
             return RedirectToAction("Manage");
         }
         
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin"), HttpPost]
         public async Task<IActionResult> Delete(Guid id)
         {
             await _parkingService.DeleteAsync(id);
+            TempData["SuccessMessage"] = "Successfully deleted the parking.";
             return RedirectToAction("Manage");
         }
 

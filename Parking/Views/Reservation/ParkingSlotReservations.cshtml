@@ -44,8 +44,13 @@
             Email: @reservation.User.Email
             @if (reservation.IsActive)
             {
-                <form asp-controller="Reservation" asp-action="DeactivateAdmin" method="post" asp-route-id="@reservation.Id">
-                    <button type="submit" class="btn btn-danger">Deactivate</button>
+                <form asp-controller="Reservation" asp-action="Deactivate" method="post" asp-route-id="@reservation.Id" id="DeactivateReservationForm">
+                    <button type="submit" class="btn btn-danger" id="DeactivateReservationButton">Deactivate</button>
+                    <script defer>
+                        const DeactivateReservationButton = document.getElementById('DeactivateReservationButton');
+                        DeactivateReservationButton.addEventListener('click', (e) => confirmDangerousActions(e, "DeactivateReservationForm",
+                            "Are you sure you want to deactivate this reservation?", "This action cannot be reversed. "))
+                    </script>
                 </form>
             }
         </div>

@@ -7,29 +7,21 @@
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    @if (User.IsInRole("Admin"))
-    {
+
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Manage
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @if (User.IsInRole("Admin"))
+                {
                 <li>
-                    <a class="dropdown-item" asp-controller="Admin" asp-action="ListUsers" >Manage Users</a>
+                    <a class="dropdown-item" asp-controller="Admin" asp-action="ListUsers">Manage Users</a>
                 </li>
                 <li>
                     <a id="ManageParkings" class="dropdown-item" asp-controller="Parking" asp-action="Manage" title="ManageParkings"> Manage Parkings</a>
                 </li>
-            </ul>
-        </li>
-    }
-    else
-    {
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Account
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                }
                 <li>
                     <a class="dropdown-item" asp-controller="Car" asp-action="Index" >My Cars</a>
                 </li>
@@ -38,7 +30,6 @@
                 </li>
             </ul>
         </li>
-    }
     <li class="nav-item">
         <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
     </li>

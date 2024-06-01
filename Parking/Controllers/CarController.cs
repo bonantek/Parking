@@ -142,6 +142,7 @@ namespace Parking.Controllers
                 try
                 {
                     await _context.SaveChangesAsync();
+                    TempData["SuccessMessage"] = "Successfully updated your car.";
                 }
                 catch (Exception)
                 {

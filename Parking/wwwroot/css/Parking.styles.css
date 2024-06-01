@@ -47,5 +47,9 @@ a {
 .inactive:hover {
     background-color: #ff0015 !important;
 }
+.buttons-flex {
+    display: flex;
+    gap: 5px;
+}
 
 
