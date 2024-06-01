@@ -29,20 +29,24 @@ Project created for academic course "Advanced Programming 2"
 
 1. Clone repo:
 ```
-git@github.com:bonantek/Parking.git
+git clone git@github.com:bonantek/Parking.git
 ```
-2. Install dependencies:
+2. Change directory
+```
+cd Parking
+```
+3. Install dependencies:
 
 ```
 dotnet restore
 ```
-3. Update database:
+4. Update database:
 ```
-dotnet ef database update
+dotnet ef database update --project Parking/
 ```
-4. And finally run our application:
+5. And finally run our application:
 ```
-dotnet run
+dotnet run --project Parking
 ```
 
 # Usage
