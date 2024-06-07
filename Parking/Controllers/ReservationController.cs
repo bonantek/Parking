@@ -42,11 +42,10 @@ namespace Parking.Controllers
         [Authorize]
         public async Task<IActionResult> Create(System.Guid id)
         {
-            var parking = await _context.Parkings
-                .Include(p => p.ParkingSlots)
-                .ThenInclude(ps => ps.Reservations)
-                .SingleAsync(p => p.Id == id);
-            if (parking == null)
+            if (await _context.Parkings
+                    .Include(p => p.ParkingSlots)
+                    .ThenInclude(ps => ps.Reservations)
+                    .SingleOrDefaultAsync(p => p.Id == id) is not {} parking)
             {
                 return Redirect("/Home/404");
             }
