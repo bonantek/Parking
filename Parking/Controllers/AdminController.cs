@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow.CopyAnalysis;
@@ -9,10 +10,12 @@ namespace Parking.Controllers
     public class AdminController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AdminController(UserManager<ApplicationUser> userManager)
+        public AdminController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         public async Task<IActionResult> ListUsers()
@@ -29,9 +32,16 @@ namespace Parking.Controllers
             {
                 return NotFound();
             }
+            var currentUser = await _userManager.GetUserAsync(HttpContext.User);
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
+                
+                if (currentUser != null && currentUser.Id == user.Id)
+                {
+                    await _signInManager.SignOutAsync();
+                    return RedirectToAction("Index", "Home");
+                }
                 TempData["SuccessMessage"] = "User has been successfully deleted.";
             }
             else
