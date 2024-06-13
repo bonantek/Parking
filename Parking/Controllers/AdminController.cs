@@ -36,12 +36,13 @@ namespace Parking.Controllers
             var result = await _userManager.DeleteAsync(user);
             if (result.Succeeded)
             {
-                TempData["SuccessMessage"] = "User has been successfully deleted.";
+                
                 if (currentUser != null && currentUser.Id == user.Id)
                 {
                     await _signInManager.SignOutAsync();
                     return RedirectToAction("Index", "Home");
                 }
+                TempData["SuccessMessage"] = "User has been successfully deleted.";
             }
             else
             {
